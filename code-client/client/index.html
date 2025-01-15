@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ai Translator</title>
+    <link rel="stylesheet" href="./css/general.css">
 </head>
 <body>
-    
+    <div id="gridContainer">
+        <div id="grid1">
+            <div id="inputFieldType">
+                <p>Übersetzungstyp</p>
+                <select id="typeSelection">
+                    <option>Auswählen</option>
+                    <option id="professional" value="professional">Professionell</option>
+                    <option id="buisness" value="buisness">Buisness-Normal</option>
+                    <option id="casual" value="casual">Normal</option>
+                </select>
+                <br>
+                <br>
+                <p>Text-Typ</p>
+                <select id="textType">
+                    <option>Auswählen</option>
+                    <option id="mail" value="mail">E-Mail</option>
+                    <option id="message" value="message">WhatsApp</option>
+                    <option id="conversation" value="conversation">Unterhaltung</option>
+                </select>
+                <br>
+                <br>
+                <p>Sprache</p>
+                <input type="text" placeholder="Deutsch, Englisch, ..." id="languageInput">
+                <br>
+                <br>
+                <button onclick="translate()" id="translateBtn">Übersetzten</button>
+            </div>
+        </div>
+        <div id="grid2">
+            <div id="textInputField">
+                <p>Text Eingabe</p>
+                <div id="textareaContainer">
+                    <textarea name="textarea" id="inputTextValue" maxlength="5000" placeholder="Zu übersetzender Text"></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="grid3">
+            <div id="textOutputField">
+                <p>Text Ausgabe</p>
+                <div id="textareaContainer">
+                    <textarea name="textarea" id="inputTextValue" maxlength="5000" placeholder="Übersetzter Text"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 <script src="./js/initialGet.js"></script>

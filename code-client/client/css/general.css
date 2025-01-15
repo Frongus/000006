@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+
+:root {
+    --backgroundColorDark: #191919;
+    --textColor: #FFFFFF;
+    --contrastColor1: #2c2b2e;
+    --btnColorPrimary: #A5C4D4;
+}
+
+* {
+    font-family: "San Francisco";
+    background-color: var(--backgroundColorDark);
+    color: var(--textColor);
+}
+
+#gridContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr; 
+    height: 90vh; 
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+/* Define individual grid items */
+#grid1, #grid2, #grid3 {
+    background-color: var(--contrastColor1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    #gridContainer {
+        grid-template-rows: auto; 
+        grid-template-columns: 1fr 2fr 2fr; 
+    }
+}
+
+#inputFieldType p {
+    opacity: .75;
+    background-color: var(--contrastColor1);
+}
+
+#inputFieldType {
+    background-color: var(--contrastColor1);
+}
+
+#inputTextValue {
+    color: var(--textColor);
+    width: 90%;
+    max-width: 100%;
+    min-width: 350px; 
+    height: 350px; 
+    max-height: 800px;
+    min-height: 300px; 
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    resize: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+#textInputField {
+    background-color: var(--contrastColor1);
+}
+
+#textInputField p {
+    opacity: .75;
+    background-color: var(--contrastColor1);
+}
+
+#typeSelection {
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+#languageInput {
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#textType {
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+#textOutputField {
+    background-color: var(--contrastColor1);
+}
+
+#textOutputField p {
+    opacity: .75;
+    background-color: var(--contrastColor1);
+}
+
+input, textarea {
+    border: 1px solid var(--btnColorPrimary);
+    background-color: var(--contrastColor1);
+}
+
+#translateBtn {
+    margin-top: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    border: 1px solid var(--btnColorPrimary);
+    background-color: var(--contrastColor1);
+}
