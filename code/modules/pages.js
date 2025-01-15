@@ -6,4 +6,8 @@ router.get('/', (req, res) => {
     logger.log(req);
 });
 
+router.post('/request/translator/', (req, res) => {
+    logger.log(req.body, important);
+})
+
 module.exports = router

@@ -4,5 +4,8 @@
   },
   "scripts": {
     "start": "electron index.js"
+  },
+  "dependencies": {
+    "electron-store": "^10.0.0"
   }
 }

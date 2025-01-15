@@ -9,12 +9,14 @@
     --textColor: #FFFFFF;
     --contrastColor1: #2c2b2e;
     --btnColorPrimary: #A5C4D4;
+    --btnColorPrimaryHover: #A5C4D4;
 }
 
 * {
     font-family: "San Francisco";
     background-color: var(--backgroundColorDark);
     color: var(--textColor);
+    transition: all ease-in-out 0.3;
 }
 
 #gridContainer {
@@ -128,4 +130,10 @@ input, textarea {
     width: 100%;
     border: 1px solid var(--btnColorPrimary);
     background-color: var(--contrastColor1);
+}
+
+button:hover {
+    background-color: var(--btnColorPrimaryHover);
+    border: 1px solid var(--backgroundColorDark);
+    cursor: pointer;
 }

@@ -1,7 +1,7 @@
 {
     "general": [
         {
-            "AI_ACCESS_POINT": "www.youtube.com",
+            "AI_ACCESS_POINT": "http://79.200.107.134:4532/request/translator/",
             "OWNER": "GMG-COMPANY",
             "POWERD_BY": "Ollama"
         }
