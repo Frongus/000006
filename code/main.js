@@ -1,10 +1,12 @@
 require('dotenv').config();
+const bodyParser = require('body-parser')
 const logger = require('./modules/logger.js');
 const express = require('express');
 const server = express();
 
-server.get('/', require('./modules/pages.js'));
-server.use(express.static('./public'))
+server.use(bodyParser.json())
+server.use('/', require('./modules/pages.js'));
+server.use(express.static('./public'));
 
 console.log(
     `=====================================================================================\n`,
