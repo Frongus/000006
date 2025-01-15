@@ -19,10 +19,12 @@ fetch(getUrl, {
         return response.json();
     })
     .then(data => {
+        localStorage.setItem('AI_URL', '');
         if (data && Array.isArray(data.general) && data.general.length > 0) {
             const info = data.general[0];
             publicInfo = info;
             localStorage.setItem('AI_URL', info.AI_ACCESS_POINT);
+            console.log(localStorage.getItem('AI_URL'))
         } else {
             alert("The 'general' field is missing or does not contain data.");
         }
