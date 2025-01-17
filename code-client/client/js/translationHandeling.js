@@ -1,14 +1,30 @@
 const btn = document.getElementById('translateBtn');
 
 var localGlobalAiUrl;
+var loading = false;
 
 console.log("Script")
 
+function activateLoadingSpinner() {
+    const loadingOverlay = document.querySelector('.loading-overlay');
+    loadingOverlay.style.display = 'flex';
+}
+
+function deactivateLoadingSpinner() {
+    const loadingOverlay = document.querySelector('.loading-overlay');
+    loadingOverlay.style.display = 'none'; 
+}
+
+
 async function translateInput() {
+    activateLoadingSpinner();
     const typeSelection = document.getElementById('typeSelection');
     const textType = document.getElementById('textType');
     const languageInput = document.getElementById('inputTextValue');
     const language = document.getElementById('languageInput');
+    const languageOutput = document.getElementById('outTextValue');
+
+    languageOutput.value = "Wird Übersetzt, bitte warten";
 
     const aiUrl = window.localStorage.getItem('AI_URL');
 
@@ -55,6 +71,19 @@ async function translateInput() {
             languageInput: text,
             language: languageType
         })
+    }).then(response => response.json()).then((data) => {
+        console.log(data);
+        deactivateLoadingSpinner();
+        if(data.message) {
+            const notBody = data.message;
+            const notTitle = "Es ist etwas schiefgelaufen, bitte erneut versuchen";
+
+            new window.Notification(notTitle, {notBody})
+            location.reload();
+        } else {
+            loading = false;
+            languageOutput.value = data.translation
+        }
     })
 }
 
